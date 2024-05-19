@@ -4,7 +4,23 @@ from django.http import HttpResponse, JsonResponse
 # Create your views here.
 
 def home(request):
-    return HttpResponse("Hello from home page!")
+    context = {
+        "articles": [
+            {
+                "title": "first article",
+                "description": "first article description"
+            },
+            {
+                "title": "second article",
+                "description": "second article description"
+            },
+            {
+                "title": "third article",
+                "description": "third article description"
+            }
+        ]
+    }
+    return render(request, 'blog/home.html', context)
 
 
 def api(request):
