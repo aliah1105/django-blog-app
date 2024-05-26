@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>detail</title>
 </head>
 <body>
-    <h1>Hello from django blog</h1>
     <center>
-        {% for article in articles %}
         <article>
             <img src="{{article.thumbnail.url}}" alt="{{article.title}}" width="600" height="400">
-            <a href="{% url 'blog:blog_detail' article.slug %}"><h2>{{article.title}}</h2></a>
+            <h2>{{article.title}}</h2>
             <small>{{article.publish}}</small>
             <p>{{article.description}}</p>
         </article>
-    {% endfor %}
     </center>
 </body>
 </html>
