@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from extentions.utils import jalali_convertor
 
 # Create your models here.
 
@@ -23,5 +24,9 @@ class Article(models.Model):
         verbose_name = "مقاله"
         verbose_name_plural = "مقالات"
 
+    def jpublish(self):
+        return jalali_convertor(self.publish)
+    jpublish.short_description = 'زمان انتشار'
+    
     def __str__(self) -> str:
         return self.title

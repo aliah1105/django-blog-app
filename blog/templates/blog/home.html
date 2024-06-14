@@ -12,7 +12,7 @@
         <article>
             <img src="{{article.thumbnail.url}}" alt="{{article.title}}" width="600" height="400">
             <a href="{% url 'blog:blog_detail' article.slug %}"><h2>{{article.title}}</h2></a>
-            <small>{{article.publish}}</small>
+            <small>{{article.jpublish}}</small>
             <p>{{article.description}}</p>
         </article>
     {% endfor %}
